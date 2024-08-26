@@ -29,9 +29,8 @@ pipeline{
                             ]
                 }
 
-                sh "ls -l"
-                sh "cd ./copy1 | ls -l"
-                sh "cd ./copy2 | ls -l"
+                sh "cd /copy1"
+                sh "ls"
             }
         }
     }

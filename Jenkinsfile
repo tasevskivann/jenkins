@@ -5,16 +5,27 @@ pipeline{
     stages {
         stage('Clone'){
             steps {
+                dir('copy1'){
+                    checkout changelog: false,
+                            poll: false,
+                            scm: [
+                                    $class: 'GitSCM',
+                                    userRemoteConfigs: [[credentialsId: 'my-username-password-id',
+                                                         url: 'https://github.com/tasevskivann/jenkins.git']]
+                            ]
+                }
+
+                dir('copy2'){
+                    checkout changelog: false,
+                            poll: false,
+                            scm: [
+                                    $class: 'GitSCM',
+                                    userRemoteConfigs: [[credentialsId: 'my-username-password-id',
+                                                         url: 'https://github.com/tasevskivann/jenkins.git']]
+                            ]
+                }
+
                 sh "ls -l"
-                checkout changelog: false,
-                    poll: false,
-                    scm: [
-                            $class: 'GitSCM',
-                            doGenerateSubmoduleConfigurations: false,
-                            submoduleCfg: [],
-                            userRemoteConfigs: [[credentialsId: 'my-username-password-id',
-                                                url: 'https://github.com/tasevskivann/jenkins.git']]
-                    ]
             }
         }
     }

@@ -10,7 +10,6 @@ pipeline{
                     poll: false,
                     scm: [
                             $class: 'GitSCM',
-                            branches: [[name: master]],
                             doGenerateSubmoduleConfigurations: false,
                             submoduleCfg: [],
                             userRemoteConfigs: [[credentialsId: 'my-username-password-id',

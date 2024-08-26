@@ -7,7 +7,7 @@ pipeline{
             steps {
 
                 cleanWs()
-
+                sh "WORKSPACE ${WORKSPACE}"
                 dir('copy1'){
                     checkout changelog: false,
                             poll: false,

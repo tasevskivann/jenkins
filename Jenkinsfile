@@ -28,9 +28,6 @@ pipeline{
                                                          url: 'https://github.com/tasevskivann/jenkins.git']]
                             ]
                 }
-
-                sh "cd ./copy1"
-                sh "ls"
             }
         }
     }

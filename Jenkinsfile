@@ -29,7 +29,7 @@ pipeline{
                             ]
                 }
 
-                sh "cd /copy1"
+                sh "cd ./copy1"
                 sh "ls"
             }
         }

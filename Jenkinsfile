@@ -5,7 +5,11 @@ pipeline{
     stages {
         stage('Clone'){
             steps {
+
+                cleanWs()
+
                 dir('copy1'){
+                    sh "WORKSPECE - ${env.WORKSPACE}"
                     checkout changelog: false,
                             poll: false,
                             scm: [
@@ -16,6 +20,8 @@ pipeline{
                 }
 
                 dir('copy2'){
+                    sh "WORKSPECE - ${env.WORKSPACE}"
+
                     checkout changelog: false,
                             poll: false,
                             scm: [

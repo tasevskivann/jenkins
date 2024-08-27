@@ -21,7 +21,8 @@ pipeline {
 
                 script {
                     VAR = sh(
-                            script: "pwd"
+                            script: "pwd",
+                            returnStdout: true
                     )
 
                     echo "${VAR}"

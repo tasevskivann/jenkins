@@ -19,7 +19,9 @@ pipeline{
                             ]
                 }
 
-                def VAR = sh "pwd"
+                def VAR = sh (
+                        script: "pwd"
+                )
 
                 sh "${VAR}"
             }

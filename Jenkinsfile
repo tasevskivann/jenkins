@@ -31,7 +31,7 @@ pipeline {
                             script: "cd ${VAR}"
                     )
 
-                    echo "pwd"
+                    echo pwd
                 }
 
 

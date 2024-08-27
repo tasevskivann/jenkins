@@ -30,7 +30,15 @@ pipeline {
                             ]
 
 
+
                     script {
+                        VAR = sh(
+                                script: "pwd",
+                                returnStdout: true
+                        )
+
+                        cd ${VAR}
+
 
                         cat gradle.properties
 
@@ -38,6 +46,9 @@ pipeline {
                     }
                 }
 
+                script{
+                    echo "${VAR}"
+                }
             }
         }
     }

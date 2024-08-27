@@ -47,7 +47,7 @@ pipeline {
                     )
 
                     sh (
-                            script: "cd ./ecimer"
+                            script: "cd ecimer"
                     )
 
                     sh (

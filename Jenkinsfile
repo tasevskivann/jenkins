@@ -25,9 +25,13 @@ pipeline {
                             returnStdout: true
                     )
 
-                    cd ./${VAR}
-                    
-                    echo pwd
+                    echo "${VAR}"
+
+                    sh (
+                            script: "cd ${VAR}"
+                    )
+
+                    echo "pwd"
                 }
 
 

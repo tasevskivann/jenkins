@@ -14,7 +14,7 @@ pipeline{
                             scm: [
                                     $class: 'GitSCM',
                                     userRemoteConfigs: [[credentialsId: 'my-username-password-id',
-                                                         url: 'https://github.com/tasevskivann/jenkins.git']]
+                                                         url: 'https://github.com/tasevskivann/ecimer.git']]
                             ]
                 }
 

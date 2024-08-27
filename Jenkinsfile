@@ -43,15 +43,7 @@ pipeline {
                     )
 
                     sh (
-                            script: "pwd"
-                    )
-
-                    sh (
-                            script: "cd ecimer"
-                    )
-
-                    sh (
-                            script: "pwd"
+                            script: "ls"
                     )
                 }
 

@@ -37,8 +37,6 @@ pipeline {
                                 returnStdout: true
                         )
 
-                        echo "${VAR}"
-
                         sh (
                                 script: "cd ${VAR}"
                         )
@@ -49,6 +47,10 @@ pipeline {
 
 
                     }
+                }
+
+                script{
+                    echo "${VAR}"
                 }
             }
         }

@@ -48,6 +48,14 @@ pipeline {
                     sh (
                             script: "ls -l"
                     )
+
+                    sh (
+                            script: "cd ./ecimer"
+                    )
+
+                    sh (
+                            script: "ls -l"
+                    )
                 }
 
 

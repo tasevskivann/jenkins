@@ -32,7 +32,7 @@ pipeline {
                     )
 
                     sh (
-                            script: "echo pwd"
+                            script: "pwd"
                     )
                 }
 

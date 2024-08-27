@@ -30,6 +30,9 @@ pipeline {
                             ]
                 }
 
+
+                sleep(time: 3, unit: "SECONDS")
+
                 script {
                     VAR = sh(
                             script: "pwd",
@@ -39,12 +42,10 @@ pipeline {
                     echo "${VAR}"
 
                     sh (
-                            script: "cd ${VAR}"
+                            script: "cd ${VAR}/ecimer"
                     )
                 }
 
-
-                sleep(time: 3, unit: "SECONDS")
 
 
             }

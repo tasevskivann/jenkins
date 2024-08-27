@@ -28,38 +28,34 @@ pipeline {
                                     userRemoteConfigs: [[credentialsId: '73b39acd-15fa-4644-a0a3-00455d0d54d4',
                                                          url          : 'https://github.com/tasevskivann/ecimer.git']]
                             ]
+
+
+
+                    script {
+                        VAR = sh(
+                                script: "pwd",
+                                returnStdout: true
+                        )
+
+                        echo "${VAR}"
+
+                        sh (
+                                script: "cd ${VAR}"
+                        )
+
+                        sh (
+                                script: "ls -l"
+                        )
+
+                        sh (
+                                script: "cd ./ecimer"
+                        )
+
+                        sh (
+                                script: "ls -l"
+                        )
+                    }
                 }
-
-
-                sleep(time: 3, unit: "SECONDS")
-
-                script {
-                    VAR = sh(
-                            script: "pwd",
-                            returnStdout: true
-                    )
-
-                    echo "${VAR}"
-
-                    sh (
-                            script: "cd ${VAR}"
-                    )
-
-                    sh (
-                            script: "ls -l"
-                    )
-
-                    sh (
-                            script: "cd ./ecimer"
-                    )
-
-                    sh (
-                            script: "ls -l"
-                    )
-                }
-
-
-
             }
         }
     }

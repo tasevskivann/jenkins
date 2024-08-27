@@ -18,7 +18,7 @@ pipeline{
                             ]
                 }
 
-                sh "${WORKSPACE}"
+                sh "ls"
 
 
             }

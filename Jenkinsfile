@@ -42,7 +42,11 @@ pipeline {
                     echo "${VAR}"
 
                     sh (
-                            script: "cd ${VAR} | pwd"
+                            script: "cd ${VAR}"
+                    )
+
+                    sh (
+                            script: "ls -l"
                     )
                 }
 

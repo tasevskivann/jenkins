@@ -39,13 +39,12 @@ pipeline {
                     echo "${VAR}"
 
                     sh (
-                            script: "cd ${VAR}/ecimer"
-                    )
-
-                    sh (
-                            script: "ls"
+                            script: "cd ${VAR}"
                     )
                 }
+
+
+                sleep(time: 3, unit: "SECONDS")
 
 
             }

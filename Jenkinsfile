@@ -44,16 +44,10 @@ pipeline {
                         )
 
                         sh (
-                                script: "ls -l"
+                                script: "cat gradle.properties"
                         )
 
-                        sh (
-                                script: "cd ./ecimer"
-                        )
 
-                        sh (
-                                script: "ls -l"
-                        )
                     }
                 }
             }

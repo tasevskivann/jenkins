@@ -71,10 +71,12 @@ pipeline {
                     echo "${ecimerVerzija} - ${jenkinsVerzija}"
                 }
 
-
-                if(ecimerVerzija < jenkinsVerzija){
-                    ecimerVerzija = jenkinsVerzija
+                script{
+                    if(ecimerVerzija < jenkinsVerzija){
+                        ecimerVerzija = jenkinsVerzija
+                    }
                 }
+
 
                 script{
                     echo "${ecimerVerzija} - ${jenkinsVerzija}"

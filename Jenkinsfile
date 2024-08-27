@@ -1,29 +1,33 @@
 #!/usr/bin/groovy
 
-pipeline{
+pipeline {
     agent any
     stages {
-        stage('Clone'){
+        stage('Clone') {
             steps {
 
                 cleanWs()
 
-                dir('jenkins'){
+                dir('jenkins') {
                     checkout changelog: false,
                             poll: false,
                             scm: [
-                                    $class: 'GitSCM',
-                                    branches: [[name: 'master']],
-                                    userRemoteConfigs: [[ credentialsId: '73b39acd-15fa-4644-a0a3-00455d0d54d4',
-                                                          url: 'https://github.com/tasevskivann/jenkins.git']]
+                                    $class           : 'GitSCM',
+                                    branches         : [[name: 'master']],
+                                    userRemoteConfigs: [[credentialsId: '73b39acd-15fa-4644-a0a3-00455d0d54d4',
+                                                         url          : 'https://github.com/tasevskivann/jenkins.git']]
                             ]
                 }
 
-                VAR = sh (
-                        script: "pwd"
-                )
+                script {
+                    VAR = sh(
+                            script: "pwd"
+                    )
 
-                sh "${VAR}"
+                    sh "${VAR}"
+                }
+
+
             }
         }
     }

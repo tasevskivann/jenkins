@@ -13,8 +13,8 @@ pipeline{
                             poll: false,
                             scm: [
                                     $class: 'GitSCM',
-                                    userRemoteConfigs: [[credentialsId: 'my-username-password-id',
-                                                         url: 'https://github.com/tasevskivann/ecimer.git']]
+                                    branches: [[name: 'master']],
+                                    userRemoteConfigs: [[url: 'https://github.com/tasevskivann/ecimer.git']]
                             ]
                 }
 

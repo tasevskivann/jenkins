@@ -41,8 +41,9 @@ pipeline {
                                 script: "cd ${VAR}"
                         )
 
-                        ecimerVerzija=sh (
-                                script: "grep -o -P '(?<=version\\=).*(?=)' gradle.properties | tr -d \"[:space:]\"\n"
+                        ecimerVerzija = sh (
+                                script: "grep -o -P '(?<=version\\=).*(?=)' gradle.properties | tr -d \"[:space:]\"\n",
+                                returnStdout: true
                         )
 
                     }

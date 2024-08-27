@@ -24,7 +24,7 @@ pipeline {
                             script: "pwd"
                     )
 
-                    sh "${VAR}"
+                    echo "${VAR}"
                 }
 
 

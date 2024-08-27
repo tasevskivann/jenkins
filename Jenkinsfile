@@ -37,11 +37,13 @@ pipeline {
                                 returnStdout: true
                         )
 
-                        cd ${VAR}
+                        sh (
+                                script: "cd ${VAR}"
+                        )
 
-
-                        cat gradle.properties
-
+                        sh (
+                                script: "grep -o -P '(?<=version\\=).*(?=)' gradle.properties | tr -d \"[:space:]\"\n"
+                        )
 
                     }
                 }

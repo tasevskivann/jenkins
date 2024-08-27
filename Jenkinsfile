@@ -30,28 +30,14 @@ pipeline {
                             ]
 
 
-
                     script {
-                        VAR = sh(
-                                script: "pwd",
-                                returnStdout: true
-                        )
 
-                        sh (
-                                script: "cd ${VAR}"
-                        )
-
-                        sh (
-                                script: "cat gradle.properties"
-                        )
+                        cat gradle.properties
 
 
                     }
                 }
 
-                script{
-                    echo "${VAR}"
-                }
             }
         }
     }

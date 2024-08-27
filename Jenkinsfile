@@ -19,7 +19,7 @@ pipeline{
                             ]
                 }
 
-                def VAR = sh (
+                VAR = sh (
                         script: "pwd"
                 )
 

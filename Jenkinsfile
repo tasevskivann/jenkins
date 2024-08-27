@@ -32,7 +32,7 @@ pipeline{
 
                 sh "ls"
 
-                cd "cd ./ecimer | echo gradle.properties"
+                sh "cd ./ecimer | echo gradle.properties"
             }
         }
     }

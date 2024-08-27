@@ -28,7 +28,7 @@ pipeline {
                     echo "${VAR}"
 
                     sh (
-                            script: "cd ${VAR}/ecimer"
+                            script: "cd ${VAR}"
                     )
 
                     sh (

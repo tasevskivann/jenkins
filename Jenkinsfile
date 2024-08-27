@@ -32,7 +32,9 @@ pipeline{
 
                 sh "ls"
 
-                sh "cd ./ecimer | ls"
+                sh "cd ./ecimer"
+
+                sh "ls"
             }
         }
     }

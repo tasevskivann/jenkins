@@ -8,7 +8,17 @@ pipeline{
 
                 cleanWs()
 
-                dir('copy1'){
+                dir('jenkins'){
+                    checkout changelog: false,
+                            poll: false,
+                            scm: [
+                                    $class: 'GitSCM',
+                                    branches: [[name: 'master']],
+                                    userRemoteConfigs: [[url: 'https://github.com/tasevskivann/jenkins.git']]
+                            ]
+                }
+
+                dir('ecimer'){
                     checkout changelog: false,
                             poll: false,
                             scm: [

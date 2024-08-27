@@ -19,7 +19,9 @@ pipeline{
                             ]
                 }
 
-                sh "pwd"
+                VAR = sh "pwd"
+
+                sh "${VAR}"
             }
         }
     }

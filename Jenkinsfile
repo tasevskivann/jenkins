@@ -3,6 +3,14 @@
 pipeline {
     agent any
     stages {
+        stage('Prvo'){
+            steps {
+                script {
+                    sh(script: "pwd")
+                }
+            }
+        }
+
         stage('Clone') {
             steps {
 
@@ -68,18 +76,9 @@ pipeline {
                 }
 
                 script{
-                    echo "${ecimerVerzija} - ${jenkinsVerzija}"
-                }
-
-                script{
                     if(ecimerVerzija < jenkinsVerzija){
                         ecimerVerzija = jenkinsVerzija
                     }
-                }
-
-
-                script{
-                    echo "${ecimerVerzija} - ${jenkinsVerzija}"
                 }
 
             }

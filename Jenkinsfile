@@ -3,6 +3,15 @@
 pipeline {
     agent any
     stages {
+        stage('check'){
+            steps{
+                script{
+                    sh(
+                            script: "pwd"
+                    )
+                }
+            }
+        }
         stage('Clone Jenkins') {
             steps {
                 dir('jenkins') {

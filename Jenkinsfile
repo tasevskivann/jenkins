@@ -5,11 +5,13 @@ pipeline {
     stages {
         stage('Prvo'){
             steps {
-                script {
-                    moja = sh (
-                            script: "grep -o -P '(?<=version\\=).*(?=)' gradle.properties | tr -d \"[:space:]\"\n",
-                            returnStdout: true
-                    )
+                dir('jenkins'){
+                    script {
+                        moja = sh (
+                                script: "grep -o -P '(?<=version\\=).*(?=)' gradle.properties | tr -d \"[:space:]\"\n",
+                                returnStdout: true
+                        )
+                    }
                 }
 
                 echo "${moja} verzija"

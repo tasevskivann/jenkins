@@ -3,26 +3,8 @@
 pipeline {
     agent any
     stages {
-        stage('Prvo'){
+        stage('Clone Jenkins') {
             steps {
-                dir('jenkins'){
-                    script {
-                        moja = sh (
-                                script: "grep -o -P '(?<=version\\=).*(?=)' gradle.properties | tr -d \"[:space:]\"\n",
-                                returnStdout: true
-                        )
-                    }
-                }
-
-                echo "${moja} verzija"
-            }
-        }
-
-        stage('Clone') {
-            steps {
-
-                cleanWs()
-
                 dir('jenkins') {
                     checkout changelog: false,
                             poll: false,
@@ -51,7 +33,11 @@ pipeline {
 
                     }
                 }
+            }
+        }
 
+        stage("Clone ecimer"){
+            steps {
                 dir('ecimer') {
                     checkout changelog: false,
                             poll: false,
@@ -81,13 +67,16 @@ pipeline {
 
                     }
                 }
+            }
+        }
 
+        stage('compare versions'){
+            steps {
                 script{
                     if(ecimerVerzija < jenkinsVerzija){
                         ecimerVerzija = jenkinsVerzija
                     }
                 }
-
             }
         }
     }

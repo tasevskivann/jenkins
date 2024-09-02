@@ -74,6 +74,7 @@ pipeline {
             steps {
                 script{
                     if(ecimerVerzija < jenkinsVerzija){
+                        echo "pomala"
                         ecimerVerzija = jenkinsVerzija
                     }
                 }
